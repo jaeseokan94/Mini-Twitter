@@ -1,0 +1,18 @@
+<% animal = ["pig","chicken","cow"] %>
+<% digest = [1,2,3,4,5] %>
+<% 1.upto(100) do %>
+<% animal.each do|y|   %>
+
+<p><%= y %></p>
+   
+     <% end %>
+<% end %>
+
+<% 3.downto(1) do |suji| %>
+    <% if (suji.modulo(2)==0) %>
+        <h1><%=suji%> 번째 수지입니다</h1>
+    <% else %>
+        <h1><%=suji%> 번째 수지가 아닙니다</h1>
+    <% end %>
+     
+<% end %>

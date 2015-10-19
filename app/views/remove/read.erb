@@ -1,0 +1,35 @@
+<h1>트위터 입니다~~</h1>
+
+<% @dbs.each do |p| %><br>
+<img src="<%= p.my_image.url %>"><br>
+<%= p.article_name %> : <%= p.article_content %> 
+<a href="/remove/delete/<%= p.id %>">delete<%= p.id %></a>
+<a href="/remove/modify/<%= p.id %>">modify </a><br>
+<br> 
+<%# 출력하겠습니다. %>
+<% p.replies.each do|r| %>
+<%=r.content %> <Br>
+<% end %>
+
+
+   <form action="/remove/write_reply" type="POST">
+    -----
+<input type="hidden" name="article_id" value="<%=p.id%>">
+<input type="text" name="myreply">
+<input type="submit" value="야#"><br>
+   </form>
+<% end %>
+
+<br><br><br>
+
+<form action="/remove/write" enctype="multipart/form-data" method="post" >
+    Name : <input type="text" name="author_name"><br>
+    Content : <textarea rows="4" cols="50" name="content">
+        
+    </textarea>
+        <br>
+        Password : <input type="password" name="password"><br>
+  <input type="file" name="image_file">
+
+    <input type="submit" value="야야야야!">
+</form>

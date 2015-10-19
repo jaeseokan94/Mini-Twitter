@@ -1,0 +1,7 @@
+<h1>Page to modify</h1>
+<form action="/remove/update/<%=@db1.id%>" method="POST">
+ Name:<input type="text" value="<%= @db1.article_name%>" name="new_name" ><br>
+ Comtent:<textarea name="new_content"><%= @db1.article_content%></textarea><br>
+    <input type="submit" value="Modify">
+</form>
+<a href="/">Return</a>
